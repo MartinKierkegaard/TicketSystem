@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace BilletLibrary
 {
+    /// <summary>
+    /// Klasse til Biler
+    /// </summary>
     public class Bil : KøreTøj
     {
-        private int v;
 
         //protected const int GrundPris = 240;
 
@@ -19,6 +21,12 @@ namespace BilletLibrary
 
 
         //TODO Der skal laves en refaktorering så brobizz rabatten kodes i selvstændig metode
+        /// <summary>
+        /// Giver prisen på en overfart 
+        /// Der gives 20% hvis datoen er en lørdag eller søndag
+        /// Der gives 5% hvis der er en brobizz
+        /// </summary>
+        /// <returns></returns>
         public override int Pris()
         {
             int total = GrundPris;
