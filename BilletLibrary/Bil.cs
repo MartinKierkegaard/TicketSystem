@@ -7,13 +7,17 @@ using System.Threading.Tasks;
 namespace BilletLibrary
 {
     /// <summary>
-    /// Klasse til Biler
+    /// Klasse til Biler på storebælts broen
     /// </summary>
     public class Bil : KøreTøj
     {
 
         //protected const int GrundPris = 240;
 
+        /// <summary>
+        /// angiver køretøjstypen
+        /// </summary>
+        /// <returns></returns>
         public override string KøreTøjType()
         {
             return "Bil";
@@ -42,9 +46,8 @@ namespace BilletLibrary
             return total;
         }
 
-        //TODO Mangler en default constructor
         /// <summary>
-        /// constructor
+        /// default constructor prisen sættes til 240
         /// </summary>
         public Bil()
          :base(240)
