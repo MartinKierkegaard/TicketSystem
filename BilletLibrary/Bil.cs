@@ -6,17 +6,31 @@ using System.Threading.Tasks;
 
 namespace BilletLibrary
 {
+    /// <summary>
+    /// Klasse til Biler på storebælts broen
+    /// </summary>
     public class Bil : KøreTøj
     {
-        private int v;
 
         //protected const int GrundPris = 240;
 
+        /// <summary>
+        /// angiver køretøjstypen
+        /// </summary>
+        /// <returns></returns>
         public override string KøreTøjType()
         {
             return "Bil";
         }
 
+
+        //TODO Der skal laves en refaktorering så brobizz rabatten kodes i selvstændig metode
+        /// <summary>
+        /// Giver prisen på en overfart 
+        /// Der gives 20% hvis datoen er en lørdag eller søndag
+        /// Der gives 5% hvis der er en brobizz
+        /// </summary>
+        /// <returns></returns>
         public override int Pris()
         {
             int total = GrundPris;
@@ -32,6 +46,9 @@ namespace BilletLibrary
             return total;
         }
 
+        /// <summary>
+        /// default constructor prisen sættes til 240
+        /// </summary>
         public Bil()
          :base(240)
         {
