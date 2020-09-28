@@ -4,41 +4,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BilletLibrary
+namespace TicketLibrary
 {
 
     /// <summary>
-    /// Alm MC klasse
+    /// MC class used for Storbæls broen
     /// </summary>
-    public class MC : KøreTøj
+    public class MC : Vehicle
     {
 
-        //private const int GrundPris = 125;
+        //private const int BasePrice = 125;
 
-            /// <summary>
-            /// angiver køretøjstypen
-            /// </summary>
-            /// <returns></returns>
-        public override string KøreTøjType()
+        /// <summary>
+        /// The type of the vehicle
+        /// </summary>
+        /// <returns></returns>
+        public override string VehicleType()
         {
             return "MC";
         }
 
         /// <summary>
-        /// angiver prisen på en overfart, med rabat hvis der bruges broBizz
+        /// Price of a journey, if Brobizz there is a discount
         /// </summary>
         /// <returns></returns>
-        public override int Pris()
+        public override int Price()
         {
             if (BroBizz)
-                return GrundPris * 95 / 100;
+                return BasePrice * 95 / 100;
 
-            return GrundPris;
+            return BasePrice;
         }
 
         /// <summary>
-        /// default ctor 
-        /// sætter prisen til 125 
+        /// default ctor , the price is 125 (baseprice)
         /// </summary>
         public MC()
             :base(125)

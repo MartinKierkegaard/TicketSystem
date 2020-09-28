@@ -1,12 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BilletLibrary;
+using TicketLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BilletLibrary.Tests
+namespace TicketLibrary.Tests
 {
     [TestClass()]
     public class MCTests
@@ -16,7 +16,7 @@ namespace BilletLibrary.Tests
         public void KøreTøjTypeTest()
         {
             var mc = new MC();
-            Assert.AreEqual("MC", mc.KøreTøjType());
+            Assert.AreEqual("MC", mc.VehicleType());
 
         }
 
@@ -25,7 +25,7 @@ namespace BilletLibrary.Tests
         public void PrisTest()
         {
             var mc = new MC();
-            Assert.AreEqual(125,mc.Pris());
+            Assert.AreEqual(125,mc.Price());
         }
 
         [TestMethod()]
@@ -33,7 +33,7 @@ namespace BilletLibrary.Tests
         {
             var mc = new MC();
             mc.BroBizz = true;
-            Assert.AreEqual(118, mc.Pris());
+            Assert.AreEqual(118, mc.Price());
         }
     }
 }
